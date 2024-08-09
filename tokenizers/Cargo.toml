@@ -2,7 +2,7 @@
 authors = ["Anthony MOI <m.anthony.moi@gmail.com>", "Nicolas Patry <patry.nicolas@protonmail.com>"]
 edition = "2018"
 name = "tokenizers"
-version = "0.19.1-dev.0"
+version = "0.20.0-dev.0"
 homepage = "https://github.com/huggingface/tokenizers"
 repository = "https://github.com/huggingface/tokenizers"
 documentation = "https://docs.rs/tokenizers/"
@@ -34,6 +34,11 @@ harness = false
 
 [[bench]]
 name = "unigram_benchmark"
+harness = false
+
+[[bench]]
+name = "llama3"
+required-features = ["http"]
 harness = false
 
 [dependencies]
@@ -80,3 +85,8 @@ tracing-subscriber = "0.3.18"
 
 [profile.release]
 lto = "fat"
+
+[[example]]
+name = "encode_batch"
+required-features = ["http"]
+
